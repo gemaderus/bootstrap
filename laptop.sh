@@ -61,17 +61,6 @@ fi
 fancy_echo "Updating Homebrew formulas ..."
 brew update
 ### end mac-components/homebrew
-fancy_echo "Removing old git installation and installing git from homebrew..."
-  sudo rm -rf /usr/bin/git
-  brew_install_or_upgrade 'git'
-
-fancy_echo "Installing vim from Homebrew to get the latest version ..."
-  brew_install_or_upgrade 'vim'
-
-fancy_echo "Installing ImageMagick, to crop and resize images ..."
-  brew_install_or_upgrade 'imagemagick'
-
-### end mac-components/packages
 
 fancy_echo "Installing rbenv, to change Ruby versions ..."
   brew_install_or_upgrade 'rbenv'
@@ -130,53 +119,11 @@ fancy_echo "Installing GitHub CLI client ..."
   brew_install_or_upgrade 'hub'
 ### end mac-components/github
 
-fancy_echo "Installing mysql ..."
-  brew install mysql
-
-fancy_echo "Installing mongo ..."
-  brew install mongodb
-
-fancy_echo "Installing redis ..."
-  brew install redis
-
-fancy_echo "Installing rabbitmq ..."
-  brew install rabbitmq
-
-fancy_echo "Installing autojump ..."
-  brew install autojump
-
-fancy_echo "Installing wget ..."
-  brew install wget
-
-fancy_echo "Installing nvm ..."
-  brew install nvm
-  printf 'eval "source $(brew --prefix nvm)/nvm.sh"\n' >> ~/.zshrc
-  
-fancy_echo "Installing node 0.10 ..."
-  nvm install 0.10
-
-fancy_echo "Configuring node 0.10 as default ..."
-  nvm use 0.10
-
-fancy_echo "Installing icu 51 ..."
-  wget http://download.icu-project.org/files/icu4c/51.2/icu4c-51_2-src.tgz
-  tar xvf icu4c-51_2-src.tgz
-  cd icu/source
-  chmod +x runConfigureICU configure install-sh
-  ./runConfigureICU MacOSX
-  make
-  sudo make install
-
 fancy_echo "Installing rmtrash"
-  brew install rmtrash
+  brew_install_or_upgrade install rmtrash
 
-fancy_echo "Installing ngrok"
-  brew install ngrok
+fancy_echo "Installing autojump"
+  brew_install_or_upgrade install autojump
 
-fancy_echo "Installing js-hint"
-  npm install jshint
-
-fancy_echo "Installing nodemon"
-  npm install -g nodemon
 ### end common-components/personal-additions
 
