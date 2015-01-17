@@ -82,11 +82,6 @@ fancy_echo "Installing ruby-build, to install Rubies ..."
   brew_install_or_upgrade 'ruby-build'
 ### end mac-components/rbenv
 
-fancy_echo "Upgrading and linking OpenSSL ..."
-  brew_install_or_upgrade 'openssl'
-  brew link openssl --force
-### end mac-components/compiler-and-libraries
-
 ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
 
 fancy_echo "Installing Ruby $ruby_version ..."
