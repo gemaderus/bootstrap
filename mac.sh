@@ -138,7 +138,7 @@ brew_install_or_upgrade 'rbenv'
 brew_install_or_upgrade 'ruby-build'
 brew_install_or_upgrade 'nvm'
 brew_install_or_upgrade 'z'
-brew_install_or_upgrade 'tmux'
+brew brew_install_or_upgrade 'zsh-syntax-highlighting'
 
 # shellcheck disable=SC2016
 append_to_zshrc 'eval "$(rbenv init - zsh --no-rehash)"' 1
@@ -165,4 +165,4 @@ fancy_echo "Configuring Bundler ..."
 number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
 
-gem_install_or_update 'tmuxinator'
+
